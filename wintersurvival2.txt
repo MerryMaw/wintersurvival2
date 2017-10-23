@@ -1,0 +1,7 @@
+"wintersurvival2"
+{
+	"base"		"gearfox"
+	"title"		"Winter Survival 2"
+	"menusystem"	"1"
+	"maps"		"^ws_|^ws2_"
+}

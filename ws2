@@ -1,0 +1,20 @@
+<NotepadPlus>
+    <Session activeView="0">
+        <mainView activeIndex="12">
+            <File firstVisibleLine="52" xOffset="0" scrollWidth="1344" startPos="2147" endPos="2147" selMode="0" lang="Lua" encoding="-1" filename="D:\Games\Steam\steamapps\calle0411\garrysmod\garrysmod\gamemodes\wintersurvival2\gamemode\init.lua" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="304" startPos="221" endPos="221" selMode="0" lang="Lua" encoding="-1" filename="D:\Games\Steam\steamapps\calle0411\garrysmod\garrysmod\gamemodes\wintersurvival2\gamemode\cl_init.lua" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="1088" startPos="546" endPos="546" selMode="0" lang="Lua" encoding="-1" filename="D:\Games\Steam\steamapps\calle0411\garrysmod\garrysmod\gamemodes\wintersurvival2\gamemode\hud\draw.lua" />
+            <File firstVisibleLine="54" xOffset="0" scrollWidth="1080" startPos="1828" endPos="1637" selMode="0" lang="Lua" encoding="-1" filename="D:\Games\Steam\steamapps\calle0411\garrysmod\garrysmod\gamemodes\wintersurvival2\gamemode\shared\weaponswap.lua" />
+            <File firstVisibleLine="2" xOffset="0" scrollWidth="808" startPos="856" endPos="856" selMode="0" lang="Lua" encoding="-1" filename="D:\Games\Steam\steamapps\calle0411\garrysmod\garrysmod\gamemodes\wintersurvival2\gamemode\hud\draw_indicators.lua" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="1000" startPos="43" endPos="13" selMode="0" lang="Lua" encoding="-1" filename="D:\Games\Steam\steamapps\calle0411\garrysmod\garrysmod\gamemodes\wintersurvival2\gamemode\hud\draw_wepswap.lua" />
+            <File firstVisibleLine="51" xOffset="0" scrollWidth="4048" startPos="1565" endPos="1565" selMode="0" lang="Lua" encoding="-1" filename="D:\Games\Steam\steamapps\calle0411\garrysmod\garrysmod\gamemodes\wintersurvival2\gamemode\hud\draw_account.lua" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="872" startPos="278" endPos="173" selMode="0" lang="Lua" encoding="-1" filename="D:\Games\Steam\steamapps\calle0411\garrysmod\garrysmod\gamemodes\wintersurvival2\gamemode\shared\player_useitem.lua" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="872" startPos="698" endPos="698" selMode="0" lang="Lua" encoding="-1" filename="D:\Games\Steam\steamapps\calle0411\garrysmod\garrysmod\gamemodes\wintersurvival2\gamemode\shared\player_dropitem.lua" />
+            <File firstVisibleLine="230" xOffset="0" scrollWidth="1288" startPos="6414" endPos="6378" selMode="0" lang="Lua" encoding="-1" filename="D:\Games\Steam\steamapps\calle0411\garrysmod\garrysmod\gamemodes\wintersurvival2\gamemode\hud\draw_editor.lua" />
+            <File firstVisibleLine="32" xOffset="0" scrollWidth="840" startPos="1626" endPos="1626" selMode="0" lang="Lua" encoding="-1" filename="D:\Games\Steam\steamapps\calle0411\garrysmod\garrysmod\gamemodes\wintersurvival2\gamemode\shared\game_rounds.lua" />
+            <File firstVisibleLine="32" xOffset="0" scrollWidth="992" startPos="1224" endPos="1224" selMode="0" lang="Lua" encoding="-1" filename="D:\Games\Steam\steamapps\calle0411\garrysmod\garrysmod\gamemodes\wintersurvival2\gamemode\shared\accounts.lua" />
+            <File firstVisibleLine="20" xOffset="0" scrollWidth="1224" startPos="1626" endPos="1626" selMode="0" lang="Lua" encoding="-1" filename="D:\Games\Steam\steamapps\calle0411\garrysmod\garrysmod\gamemodes\wintersurvival2\gamemode\itemsystem\items\axe.lua" />
+        </mainView>
+        <subView activeIndex="0" />
+    </Session>
+</NotepadPlus>

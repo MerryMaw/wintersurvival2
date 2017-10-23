@@ -1,0 +1,4 @@
+"vertexlitgeneric" {
+    "$basetexture" "mixerman3d\other\skate_misc"
+    "$surfaceprop" "concrete"
+}
