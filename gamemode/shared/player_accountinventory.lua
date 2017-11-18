@@ -63,10 +63,12 @@ if (SERVER) then
 else
 	net.Receive("UpdateAccountInventory",function()
 		local pl = LocalPlayer()
+		if (!IsValid(pl)) then return end
 		
-		if (!pl.AccountInv) then pl.AccountInv = {} end
+		pl.AccountInv = pl.AccountInv or {}
 		
 		local ID = net.ReadUInt(5)
+		
 		pl.AccountInv[ID] = {Name = net.ReadString(),Quantity = net.ReadUInt(32)}
 		
 		if (pl.AccountInv[ID].Quantity <= 0) then pl.AccountInv[ID] = nil end
