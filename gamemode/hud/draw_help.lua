@@ -4,14 +4,12 @@ local MCO = Color(0,0,0,150)
 MAIN_HELP = false
 MAIN_HELP_PAGES = 5
 
-hook.Add("Tick","Help",function()
-	if (input.KeyPress(KEY_F1)) then 
-		if (MAIN_HELP and MAIN_HELP < MAIN_HELP_PAGES) then
-			MAIN_HELP = MAIN_HELP + 1
-		elseif (MAIN_HELP) then MAIN_HELP = false
-		else MAIN_HELP = 1 end
-	end
-end)
+function GM:ShowHelp(pl)
+    if (MAIN_HELP and MAIN_HELP < MAIN_HELP_PAGES) then
+        MAIN_HELP = MAIN_HELP + 1
+    elseif (MAIN_HELP) then MAIN_HELP = false
+    else MAIN_HELP = 1 end
+end
 
 local function WrapString(str,width)
 	local dp = string.Explode(" ",str)
@@ -38,13 +36,15 @@ end
 function DrawHelp()
 	local gx,gy = 5,30
 	
-	if (!MAIN_HELP) then 
-		DrawRect(gx,gy,140,20,MCO)
-		DrawText("F1 - Help/Next Page","Trebuchet18",gx+4,gy,MAIN_TEXTCOLOR)
+	if (!MAIN_HELP) then
+        surface.SetDrawColor(MCO.r,MCO.g,MCO.b,MCO.a);
+        surface.DrawRect(gx,gy,140,20);
+        draw.DrawText("F1 - Help/Next Page","Trebuchet18",gx+4,gy,MAIN_TEXTCOLOR)
 		return 
 	end
-	
-	DrawRect(gx,gy,256,392,MCO)
+
+    surface.SetDrawColor(MCO.r,MCO.g,MCO.b,MCO.a);
+    surface.DrawRect(gx,gy,256,392);
 	
 	gx = gx + 4
 	gy = gy + 4

@@ -85,7 +85,8 @@ end
 function meta:CanPlaceStructure(Tr)
 	if (Tr and Tr.HitPos) then
 		local A 	= util.PointContents( Tr.HitPos )
-		local Ang 	= math.AngleNormalize(Tr.HitNormal:Angle())
+		local Ang 	= Tr.HitNormal:Angle();
+        Ang:Normalize();
 		
 		if (A == CONTENTS_WATER or A == CONTENTS_WATER+CONTENTS_TRANSLUCENT ) then return false end
 		if (Ang.p < -120 or Ang.p > -60) then return false end

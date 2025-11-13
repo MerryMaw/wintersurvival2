@@ -6,12 +6,9 @@ local x,y = ScrW()-200,30
 local AccountMenu = nil
 local Info = nil
 
-hook.Add("Tick","AccountInventory",function()
-	if (input.KeyPress(KEY_F2)) then 
-		OpenAccountMenu()
-	end
-end)
-
+function GM:ShowTeam( pl )
+    OpenAccountMenu()
+end
 
 function ReloadAccountMenu()
 	if (!IsAccountMenuOpen()) then return end
@@ -24,10 +21,14 @@ function ReloadAccountMenu()
 		a.Quantity = v.Quantity
 		a:Droppable("ACCOUNT")
 		a.Paint = function(s,w,h)
-			DrawRect(0,0,w,h,MCO)
-			DrawMaterialRect(0,0,w,h,MAIN_WHITECOLOR,s.Item.Icon)
-			
-			DrawText("x"..v.Quantity,"ChatFont",1,h-18,MAIN_TEXTCOLOR)
+            surface.SetDrawColor(MCO.r,MCO.g,MCO.b,MCO.a);
+            surface.DrawRect(0,0,w,h);
+
+            surface.SetDrawColor(MAIN_WHITECOLOR.r,MAIN_WHITECOLOR.g,MAIN_WHITECOLOR.b,MAIN_WHITECOLOR.a);
+            surface.SetMaterial(s.Item.Icon);
+            surface.DrawTexturedRect(0,0,w,h);
+
+			draw.DrawText("x"..v.Quantity,"ChatFont",1,h-18,MAIN_TEXTCOLOR)
 		end
 		
 		a.OnCursorEntered = function(s)
@@ -35,7 +36,10 @@ function ReloadAccountMenu()
 				Info = vgui.Create("DPanel")
 				Info:SetPos(x-410,60)
 				Info:SetSize(195,100)
-				Info.Paint = function(s,w,h) DrawRect(0,0,w,h,SCO) end
+				Info.Paint = function(s,w,h)
+                    surface.SetDrawColor(SCO.r,SCO.g,SCO.b,SCO.a);
+                    surface.DrawRect(0,0,w,h);
+                end
 				
 				Info.Label = vgui.Create("DLabel",Info)
 				Info.Label:SetPos(5,5)
@@ -68,7 +72,10 @@ function ReloadAccountMenu()
 				local X,Y = gui.MousePos()
 				
 				local menu = DermaMenu() 
-				menu.Paint = function(s,w,h) DrawRect(0,0,w,h,MCO) end
+				menu.Paint = function(s,w,h)
+                    surface.SetDrawColor(MCO.r,MCO.g,MCO.b,MCO.a);
+                    surface.DrawRect(0,0,w,h);
+                end
 				menu:AddOption( "Use", function() if (s.Item) then RequestUseItem(s.Item.Name,true) end end ):SetColor(MAIN_TEXTCOLOR)
 				menu:AddOption( "Destroy", function() if (s.Item) then RequestDropItem(s.Item.Name,true) end end ):SetColor(MAIN_TEXTCOLOR)
 					
@@ -95,17 +102,21 @@ function OpenAccountMenu()
 		AccountMenu:SetDeleteOnClose(false)
 		AccountMenu:MakePopup()
 		AccountMenu.Paint = function(s,w,h)
-			DrawRect(0,0,w,h,MCO)
-			DrawRect(5,20,w-10,20,MCO)
+            surface.SetDrawColor(MCO.r,MCO.g,MCO.b,MCO.a);
+            surface.DrawRect(0,0,w,h);
+            surface.DrawRect(5,20,w-10,20);
 			
-			DrawText("Time spent: "..math.SecondsToTime(LocalPlayer():GetTimeSpent()),"Trebuchet18",8,21,MAIN_WHITECOLOR)
+			draw.DrawText("Time spent: "..math.SecondsToTime(LocalPlayer():GetTimeSpent()),"Trebuchet18",8,21,MAIN_WHITECOLOR)
 		end
 		AccountMenu.OnClose = function(s) surface.PlaySound("wintersurvival2/hud/itemequip.wav") end
 		
 		local Pane = vgui.Create( "DScrollPanel", AccountMenu )
 		Pane:SetPos(5,45)
 		Pane:SetSize(AccountMenu:GetWide()-10,AccountMenu:GetTall()-50)
-		Pane.Paint = function(s,w,h) DrawRect(0,0,w,h,MCO) end
+		Pane.Paint = function(s,w,h)
+            surface.SetDrawColor(MCO.r,MCO.g,MCO.b,MCO.a);
+            surface.DrawRect(0,0,w,h);
+        end
 		
 		local l = vgui.Create("DIconLayout",Pane)
 		l:SetSize(Pane:GetWide()-10,Pane:GetTall()-10)
@@ -126,6 +137,7 @@ function IsAccountMenuOpen()
 end
 
 function DrawAccountInventory()
-	DrawRect(x,y,200,20,MCO)
-	DrawText("F2 - Account","Trebuchet18",x+4,y+2,MAIN_TEXTCOLOR)
+    surface.SetDrawColor(MCO.r,MCO.g,MCO.b,MCO.a);
+    surface.DrawRect(x,y,200,20);
+	draw.DrawText("F2 - Account","Trebuchet18",x+4,y+2,MAIN_TEXTCOLOR)
 end

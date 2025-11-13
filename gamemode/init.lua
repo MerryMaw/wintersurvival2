@@ -23,21 +23,24 @@ local models = {
 }
 	
 function GM:Initialize()
-	resource.AddDir("sound/wintersurvival2")
-	resource.AddDir("materials/wintersurvival2")
-	resource.AddDir("materials/settlement")
-	resource.AddDir("materials/mixerman3d")
-	resource.AddDir("materials/lam")
-	
-	resource.AddDir("models/mixerman3d")
-	
-	resource.AddDir("materials/gearfox") 
-	resource.AddDir("materials/mawbase") 
-	resource.AddDir("models/gearfox") 
-	resource.AddDir("sound/mawbase") 
-	
-	resource.AddFile("models/weapons/w_archersword/w_archersword.mdl")
-	resource.AddFile("materials/models/weapons/archersword.vmt")
+    resource.AddFile("models/mixerman3d/other/arrow.mdl")
+    resource.AddFile("models/weapons/w_archersword/w_archersword.mdl")
+
+	resource.AddFile("materials/lam/musicnotes/note1.vmt")
+    resource.AddFile("materials/lam/musicnotes/note2.vmt")
+    resource.AddFile("materials/lam/skygrid.vmt")
+
+    resource.AddFile("materials/mixerman3d/other/metal_galv.vmt")
+    resource.AddFile("materials/mixerman3d/other/metal_galv2.vmt")
+    resource.AddFile("materials/mixerman3d/other/skate_deck.vmt")
+    resource.AddFile("materials/mixerman3d/other/skate_misc.vmt")
+
+    resource.AddFile("materials/models/weapons/archersword.vmt")
+    resource.AddFile("materials/models/weapons/archersword_normal.vtf")
+
+    resource.AddDir("materials/settlement")
+    resource.AddDir("materials/wintersurvival2")
+    resource.AddDir("sound/wintersurvival2")
 end
 
 function GM:PlayerAuthed(pl)
@@ -116,5 +119,13 @@ function GM:PlayerShouldTakeDamage( pl, inf )
 	
 	return true
 end
- 
+
+hook.Add("PlayerSelectSpawn", "RandomSpawn", function(pl)
+    local spawns = ents.FindByClass("info_player_start");
+    table.insert(spawns,ents.FindByClass("gmod_player_start"));
+
+    local random_entry = math.random(#spawns)
+
+    return spawns[random_entry]
+end)
 

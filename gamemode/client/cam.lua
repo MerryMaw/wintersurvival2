@@ -1,6 +1,6 @@
 local Off = Vector(0,0,10)
 
-OverrideDefaultGFCamera(function(ply, origin, angles, fov)
+hook.Add("CalcView","View",function(ply, origin, angles, fov)
 	local Bg = ply:GetRagdollEntity()
 		
 	if (IsValid(Bg)) then

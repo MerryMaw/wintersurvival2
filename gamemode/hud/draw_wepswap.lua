@@ -32,11 +32,16 @@ function DrawWepSwap()
 		
 		if (Slot == i) then MCO.b = 150
 		else MCO.b = 0 end
-		
-		DrawRect(x+10,h-s-y-10,s,s,MCO)
+
+        surface.SetDrawColor(MCO.r,MCO.g,MCO.b,MCO.a);
+        surface.DrawRect(x+10,h-s-y-10,s,s);
 		
 		if (pl.Weapons and pl.Weapons[i]) then
-			if (pl.Weapons[i].Item.Icon) then DrawMaterialRect(x+10,h-s-y-10,s,s,MAIN_WHITECOLOR,pl.Weapons[i].Item.Icon) end
+			if (pl.Weapons[i].Item.Icon) then
+                surface.SetDrawColor(MAIN_WHITECOLOR.r,MAIN_WHITECOLOR.g,MAIN_WHITECOLOR.b,MAIN_WHITECOLOR.a);
+                surface.SetMaterial(pl.Weapons[i].Item.Icon);
+                surface.DrawTexturedRect(x+10,h-s-y-10,s,s);
+            end
 			
 			if (input.IsMouseInBox(x+10,h-s-y-10,s,s) and Ib) then
 				RequestUnEquip(i)
