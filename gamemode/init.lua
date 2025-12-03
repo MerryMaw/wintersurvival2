@@ -72,6 +72,7 @@ function GM:PlayerSpawn(pl)
 		pl:SetModel(Model(models[math.random(#models)]))
 		pl:Give("hands")
 		pl:SelectWeapon("hands")
+        pl:SetCollisionGroup(COLLISION_GROUP_WEAPON)
 	end
 end
 

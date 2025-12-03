@@ -2,6 +2,7 @@ AddCSLuaFile("autolua.lua")
 include("autolua.lua")
 
 addLuaCSFolder("hud")
+addLuaCSFolder("hud/vgui")
 addLuaCSFolder("client")
 
 addLuaSHFolder("shared")
@@ -9,7 +10,7 @@ addLuaSHFolder("itemsystem")
 
 addLuaSVFolder("server")
 
-GM.Name 		= "Winter Survival 2 - v1.3"
+GM.Name 		= "Winter Survival 2 - v2.0.0b"
 GM.Author 		= "The Maw"
 GM.Email 		= "cjbremer@gmail.com"
 GM.Website 		= "www.devinity2.com"

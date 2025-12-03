@@ -1,6 +1,8 @@
 
 local MCO = Color(0,0,0,150)
 
+local DrawText = draw.DrawText
+
 function GM:HUDPaint()
 	local CountDown = self.CountDown
 	

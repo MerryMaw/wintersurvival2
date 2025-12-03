@@ -1,10 +1,10 @@
 
 local MCO = Color(0,0,0,150)
 
-MAIN_HELP = false
+MAIN_HELP = MAIN_HELP or false
 MAIN_HELP_PAGES = 5
 
-function GM:ShowHelp(pl)
+function flipHelp()
     if (MAIN_HELP and MAIN_HELP < MAIN_HELP_PAGES) then
         MAIN_HELP = MAIN_HELP + 1
     elseif (MAIN_HELP) then MAIN_HELP = false
@@ -15,7 +15,7 @@ local function WrapString(str,width)
 	local dp = string.Explode(" ",str)
 	local dout = dp[1]
 	local curline = dout
-	
+
 	for k,v in pairs(dp) do
 		if k ~= 1 then
 			local sz = surface.GetTextSize(curline)
@@ -29,13 +29,13 @@ local function WrapString(str,width)
 			end
 		end
 	end
-	
+
 	return dout
 end
 
 function DrawHelp()
 	local gx,gy = 5,30
-	
+
 	if (!MAIN_HELP) then
         surface.SetDrawColor(MCO.r,MCO.g,MCO.b,MCO.a);
         surface.DrawRect(gx,gy,140,20);
