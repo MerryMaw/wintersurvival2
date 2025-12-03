@@ -18,6 +18,6 @@ GM.Website 		= "www.devinity2.com"
 local Zero = Vector(0,0,0)
 
 function GM:Move(ply,mv)
-	if (ply:IsPigeon() or !ply:Alive()) then mv:SetVelocity(-ply:GetVelocity()) return mv end
+	if (ply:IsPigeon() or not ply:Alive()) then mv:SetVelocity(-ply:GetVelocity()) return mv end
 end
 

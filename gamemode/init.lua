@@ -50,7 +50,7 @@ function GM:PlayerAuthed(pl)
 end
 
 function GM:PlayerInitialSpawn(pl)
-	if (!self.CountDown and #player.GetAll() > 1) then self:StartCountDown() end
+	if (not self.CountDown and #player.GetAll() > 1) then self:StartCountDown() end
 	pl:SetHuman(false)
 end
  
@@ -86,7 +86,7 @@ end
 local Up = Vector(0,0,20)
 
 function GM:DoPlayerDeath( pl, attacker, dmginfo )
-	if (!pl:IsPigeon()) then 
+	if (not pl:IsPigeon()) then
 		if (#player.GetAllHumans() > 1) then
 			local a = ents.Create("ws_grave")
 			a:SetPos(pl:GetPos()+Up)
@@ -112,7 +112,7 @@ function GM:PlayerDeathSound()
 end
 
 function GM:PlayerShouldTakeDamage( pl, inf )
-	if (inf:IsPlayer() and pl:IsPlayer() and !pl:IsPigeon()) then
+	if (inf:IsPlayer() and pl:IsPlayer() and not pl:IsPigeon()) then
 		if (self.CountDown > CurTime()-MAIN_PVPTIMER) then
 			return false
 		end
