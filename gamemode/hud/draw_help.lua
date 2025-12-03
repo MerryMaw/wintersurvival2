@@ -36,7 +36,7 @@ end
 function DrawHelp()
 	local gx,gy = 5,30
 
-	if (!MAIN_HELP) then
+	if (not MAIN_HELP) then
         surface.SetDrawColor(MCO.r,MCO.g,MCO.b,MCO.a);
         surface.DrawRect(gx,gy,140,20);
         draw.DrawText("F1 - Help/Next Page","Trebuchet18",gx+4,gy,MAIN_TEXTCOLOR)
