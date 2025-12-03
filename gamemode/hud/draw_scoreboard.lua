@@ -15,7 +15,7 @@ function GM:ScoreboardHide()
 end
 
 function GM:HUDDrawScoreBoard()
-	if (!self.ShowSB) then return end
+	if (not self.ShowSB) then return end
 	
 	local NPly 		= #player.GetAll()
 	local Tall 		= SCOREBOARD_OFF + 20 * NPly
