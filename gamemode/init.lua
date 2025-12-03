@@ -85,7 +85,7 @@ end
 
 local Up = Vector(0,0,20)
 
-function GM:DoPlayerDeath( pl, attacker, dmginfo )
+function GM:DoPlayerDeath( pl, _, _ )
 	if (not pl:IsPigeon()) then
 		if (#player.GetAllHumans() > 1) then
 			local a = ents.Create("ws_grave")
@@ -95,7 +95,7 @@ function GM:DoPlayerDeath( pl, attacker, dmginfo )
 			a:Activate()
 			a:AddItem("Meat",math.random(8,10))
 			
-			for k,v in pairs(pl:GetInventory()) do
+			for _,v in pairs(pl:GetInventory()) do
 				a:AddItem(v.Name,v.Quantity)
 			end
 		end
@@ -121,7 +121,7 @@ function GM:PlayerShouldTakeDamage( pl, inf )
 	return true
 end
 
-hook.Add("PlayerSelectSpawn", "RandomSpawn", function(pl)
+hook.Add("PlayerSelectSpawn", "RandomSpawn", function(_)
     local spawns = ents.FindByClass("info_player_start");
     table.insert(spawns,ents.FindByClass("gmod_player_start"));
 

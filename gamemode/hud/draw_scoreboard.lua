@@ -1,4 +1,3 @@
-local SCOREBOARD_FADE 	= Color(20,20,20,70)
 
 local SCOREBOARD_OFF	= 101
 local SCOREBOARD_WIDTH 	= 700
